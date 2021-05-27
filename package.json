@@ -6,7 +6,7 @@
   "scripts": {
     "build": "env-cmd cfw build",
     "predeploy":"npm run build",
-    "deploy": "env-cmd cfw deploy"
+    "deploy": "env-cmd --silent cfw deploy"
   },
   "author": "",
   "license": "MIT",
