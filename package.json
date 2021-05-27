@@ -4,7 +4,7 @@
   "description": "API for Malina.js resources",
   "main": "index.js",
   "scripts": {
-    "build": "env-cmd cfw build",
+    "build": "env-cmd --silent cfw build",
     "predeploy":"npm run build",
     "deploy": "env-cmd --silent cfw deploy"
   },
