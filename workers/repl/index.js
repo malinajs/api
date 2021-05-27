@@ -1,9 +1,16 @@
 import { Router } from 'worktop';
 import { listen } from 'worktop/cache';
+import * as CORS from 'worktop/cors';
 
 import {getGist,addGist} from './lib/store';
 
 const API = new Router();
+
+API.prepare = CORS.preflight({
+	origin: '*', 
+	headers: ['Cache-Control', 'Content-Type', 'X-Count'],
+	methods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE'],
+});
 
 /** Get gist from the store */
 API.add('GET', '/gist/:gid', async (req, res) => {
