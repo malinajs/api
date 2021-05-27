@@ -9,6 +9,12 @@ jobs:
   deploy:
     environment: production
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNTID: ${{ secrets.CLOUDFLARE_ACCOUNTID }}
+      CLOUDFLARE_AUTH_EMAIL: ${{ secrets.CLOUDFLARE_AUTH_EMAIL }}
+      CLOUDFLARE_AUTH_KEY: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
+      WORKER_REPL_NAME: ${{ secrets.WORKER_REPL_NAME }}
+      KV_REPL_GISTS: ${{ secrets.KV_REPL_GISTS }}
     steps:
 
       - name: Checkout repository
